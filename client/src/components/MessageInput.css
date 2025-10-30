@@ -1,0 +1,113 @@
+.message-input-form {
+  width: 100%;
+}
+
+.input-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 14px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
+  border-radius: 28px;
+  transition: all 0.3s ease;
+}
+
+.input-container:focus-within {
+  border-color: var(--green-primary);
+  box-shadow: 0 0 0 3px var(--green-glow);
+  background: var(--bg-card);
+}
+
+.attachment-button,
+.emoji-button {
+  width: 38px;
+  height: 38px;
+  border: none;
+  background: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.attachment-button:hover,
+.emoji-button:hover {
+  background: var(--bg-hover);
+  color: var(--text-secondary);
+  transform: scale(1.1);
+}
+
+.message-textarea {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: none;
+  resize: none;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 8px 0;
+  min-height: 22px;
+  max-height: 120px;
+  font-family: inherit;
+  color: var(--text-primary);
+}
+
+.message-textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.send-button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  background: var(--bg-hover);
+  color: var(--text-muted);
+}
+
+.send-button.active {
+  background: var(--gradient-primary);
+  color: var(--bg-primary);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--green-glow);
+}
+
+.send-button:disabled {
+  cursor: not-allowed;
+  transform: none;
+}
+
+.send-button.active:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 35px var(--green-glow), 0 0 50px var(--blue-glow);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .input-container {
+    padding: 10px;
+    gap: 6px;
+  }
+  
+  .attachment-button,
+  .emoji-button,
+  .send-button {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .message-textarea {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}
